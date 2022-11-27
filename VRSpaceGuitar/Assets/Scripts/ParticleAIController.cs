@@ -6,7 +6,6 @@ public class ParticleAIController : MonoBehaviour
 {
     public Transform particleObj;
     protected NavMeshAgent otherParticleMesh;
-    private float speed; 
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +15,6 @@ public class ParticleAIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         otherParticleMesh.SetDestination(particleObj.position);
     }
 }
