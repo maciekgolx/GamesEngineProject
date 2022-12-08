@@ -7,7 +7,6 @@ public class CircularMovement : MonoBehaviour
     [SerializeField] Transform centerRotation;
     [SerializeField] float radiusRotation = 1f, angularSpeed = 3f;
     float posX, posZ,posY, angle = 0f;
-    // Start is called before the first frame update
     
 
     // Update is called once per frame

@@ -12,8 +12,6 @@ public class AudioLoudnesstester : MonoBehaviour
 
     //how long the array will be
     public int sampleDataLength = 1024;
-
-
     private float currentUpdateTime= 0f;
 
     //Loudness
@@ -44,13 +42,13 @@ public class AudioLoudnesstester : MonoBehaviour
             {
                 clipLoudness += Mathf.Abs(sample);
             }
-            //average 
+            //avrages object makes sure the object fits the game and limits the size
             clipLoudness /= sampleDataLength;
-            //making sure it fits game object better
             clipLoudness *=sizeFactor;
-            // to limit the sizes
             clipLoudness =Mathf.Clamp(clipLoudness,minSize,maxSize);
-            // to apply the scale
+
+
+            // apply the scale to x y z
             GameObj.transform.localScale = new Vector3(clipLoudness,clipLoudness,clipLoudness);
         }
     }

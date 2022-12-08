@@ -8,8 +8,8 @@ public class Hand : MonoBehaviour
     [SerializeField] private GameObject followObject;
     [SerializeField] private float followSpeed = 30f;
     [SerializeField] private float rotateSpeed = 100f;
-    [SerializeField] private Vector3 positionOffset;
-    [SerializeField] private Vector3 rotationOffset;
+    [SerializeField] private Vector3 posOffset;
+    [SerializeField] private Vector3 rotateOffset;
     private Transform _followTarget;
     private Rigidbody _body;
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class Hand : MonoBehaviour
     {
         _followTarget = followObject.transform;
         _body = GetComponent<Rigidbody>();
-        //_body.collisionDetectionMode = collisionDetectionMode.Continuous; 
+        
         _body.interpolation = RigidbodyInterpolation.Interpolate;
         _body.mass=20f;
 
@@ -34,12 +34,12 @@ public class Hand : MonoBehaviour
 
     private void PhysicsMove()
     {
-        var positionWithOffset =  _followTarget.TransformPoint(positionOffset);
-        var distance = Vector3.Distance(positionWithOffset, transform.position);
-        _body.velocity = (positionWithOffset - transform.position).normalized * (followSpeed * distance);
+        var posWithOffset =  _followTarget.TransformPoint(posOffset);
+        var distance = Vector3.Distance(posWithOffset, transform.position);
+        _body.velocity = (posWithOffset - transform.position).normalized * (followSpeed * distance);
 
-        var rotationWithOffset = _followTarget.rotation * Quaternion.Euler(rotationOffset);
-        var q =  rotationWithOffset * Quaternion.Inverse(_body.rotation);
+        var rotateWithOffset = _followTarget.rotation * Quaternion.Euler(rotateOffset);
+        var q =  rotateWithOffset * Quaternion.Inverse(_body.rotation);
         q.ToAngleAxis(out float angle, out Vector3 axis);
         _body.angularVelocity = axis * (angle * Mathf.Deg2Rad * rotateSpeed);
     }
