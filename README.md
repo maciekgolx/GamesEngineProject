@@ -7,19 +7,26 @@ Student Number: C19389881
 Class Group:DT228
 
 # Description of the project
-	This project you control a robot who is placed in a house, you can explore the house and a platform right outside. 
+	This project you control a robot who is placed in a house, 
+	you can explore the house and a platform right outside. 
+
 	There is a fireplace with a particle system which simulates a real fire. 
-	In the main room of the house there are 3 spiining hologram platforms present each of which have a guitar which scales depending on the frequency of the music played. 
+	In the main room of the house there are 3 spinning hologram platforms present,
+	each of which have a guitar which scales depending on the frequency of the music played. 
 	The player when they move outside they can look for a star which reacts to their voice. 
-	In the distance a lot of starships can be seen with one of them going in a circular motion around various axis, 
-	the rest of the starships use the seek and arrive theory of artificial intelligence in order to move in accordance with the first starship.
+
+	In the distance a lot of starships can be seen,
+	with one of them going in a circular motion around various axis, 
+	the rest of the starships use the seek and arrive theory of artificial intelligence,
+	in order to move in accordance with the first starship.
+
+
 	The starships, guitar, fireplace and sofa are all created in blender
 # Instructions for use
 	The user can move in Virtual Reality using their two controllers
-	The right controllers button is responsible for turning, where as the left controller is responsible for moving.
+	The right controllers button is responsible for turning,
+	 where as the left controller is responsible for moving.
 	the individual can walk on the various platforms to explore the world
-# How it works
-
 
 # List of classes/assets in the project and whether made yourself or modified or if its from a source, please give the reference
 
@@ -35,6 +42,7 @@ Class Group:DT228
 | Hand.cs					| Modified from [reference]()  |
 | IKFootSolver.cs 			| From [reference]() |
 
+# How it works
 
 # References
 
