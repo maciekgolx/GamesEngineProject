@@ -25,12 +25,16 @@ Class Group:DT228
 # Instructions for use
 	The user can move in Virtual Reality using their two controllers
 	The right controllers button is responsible for turning,
-	 where as the left controller is responsible for moving.
+	where as the left controller is responsible for moving.
 	the individual can walk on the various platforms to explore the world
 
-# List of classes/assets in the project and whether made yourself or modified or if its from a source, please give the reference
 
-| Class/asset 				| Source |
+# How it works
+## hi
+
+# List of classes/assets in the project 
+
+| Class/assets 				| Source |
 |---------------------------|-----------|
 | ParticleAIController.cs 	| Self written |
 | Randomrotate.cs			| Self written |
@@ -41,17 +45,16 @@ Class Group:DT228
 | Head.cs					| Self written |
 | Hand.cs					| Modified from [reference]()  |
 | IKFootSolver.cs 			| From [reference]() |
-
-# How it works
+| AudioLoudnesstester.cs	| Self written |
 
 # References
 
 # What I am most proud of in the assignment
 
 # Proposal submitted earlier can go here:
-I aim of my project is to incorporate music and sci-fi into one, similar to the self playing guitar or piano idea shown in the brief but with a bit more groovyness, i aim to have the guitar produce music  from a hologramic point of view. I also aim for each key of the guitar to be reflected in the song. As well as the user being able to play a guitar of their own to produce music in the virtual reality environment which will be reflected by the background changing.
+	I aim of my project is to incorporate music and sci-fi into one, similar to the self playing guitar or piano idea shown in the brief but with a bit more groovyness, i aim to have the guitar produce music  from a hologramic point of view. I also aim for each key of the guitar to be reflected in the song. As well as the user being able to play a guitar of their own to produce music in the virtual reality environment which will be reflected by the background changing.
 
-I plan to implement this idea by having a guitar hologram playing a song, and a seperate function of the user being able to play their guitar and it reflecting in the background in a virtual reality setting
+	I plan to implement this idea by having a guitar hologram playing a song, and a seperate function of the user being able to play their guitar and it reflecting in the background in a virtual reality setting
 ## This is how to markdown text:
 
 This is *emphasis*
