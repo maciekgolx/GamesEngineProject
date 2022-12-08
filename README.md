@@ -30,7 +30,12 @@ Class Group:DT228
 
 
 # How it works
-## hi
+### Model combined with camera
+A model has been imported from the asset store of a robot.
+his Model is then rigged to have both hand movements, leg movements and head movements.
+#### Leg Movement 
+To get the leg movement working,
+I have followed a tutorial to get the legs to move in accordance to the rate of movement of the camera
 
 # List of classes/assets in the project 
 
