@@ -1,6 +1,6 @@
-# Project Title
+# Space Shenaniggans 
 
-Name:
+Name: Maciej Golubski
 
 Student Number: C19389881
 
@@ -32,8 +32,8 @@ Class Group:DT228
 # How it works
 ### Model combined with camera
 A model has been imported from the asset store of a robot.
-his Model is then rigged to have both hand movements, leg movements and head movements.
-#### Leg Movement 
+this Model is then rigged to have both hand movements, leg movements and head movements.
+##### Leg Movement 
 To get the leg movement working,
 I have followed a tutorial to get the legs to move in accordance to the rate of movement of the camera
 
@@ -47,11 +47,16 @@ I have followed a tutorial to get the legs to move in accordance to the rate of 
 | ScaleFromMicrophone.cs	| Self written |
 | MicDetection.cs			| Self written |
 | AudioLoudnesstester.cs	| Self written |
-| Head.cs					| Self written |
-| Hand.cs					| Modified from [reference]()  |
-| IKFootSolver.cs 			| From [reference]() |
-| AudioLoudnesstester.cs	| Self written |
-
+| Head.cs					| Modified from [reference](https://www.youtube.com/watch?v=MYOjQICbd8I&list=PLwz27aQG0IIK88An7Gd16An9RrdCXKBAB&index=19) |
+| Hand.cs					| Modified from [reference](https://www.youtube.com/watch?v=MYOjQICbd8I&list=PLwz27aQG0IIK88An7Gd16An9RrdCXKBAB&index=19)  |
+| IKFootSolver.cs 			| From [reference](https://www.youtube.com/watch?v=1Xr3jB8ik1g&t=256s) |
+| Robert Kyle				| Imported from asset store |
+| sofa.fbx	                | self created in blender |
+| fire						| Self written |
+| skybox					| Self written |
+| fireplace.fbx				| self created in blender |
+| spaceship.fbx				| self created in blender |
+| guitar.fbx				| self created in blender |
 # References
 
 # What I am most proud of in the assignment
@@ -62,8 +67,81 @@ I have followed a tutorial to get the legs to move in accordance to the rate of 
 	I plan to implement this idea by having a guitar hologram playing a song, and a seperate function of the user being able to play their guitar and it reflecting in the background in a virtual reality setting
 ## This is how to markdown text:
 
-This is *emphasis*
+# class "scale from microphone"
+```c#
+void Update()
+    {
+        float loudness = detector.GetLoudnessFromMicrophone() * loudnessSensibility;
 
+        if ( loudness<threshold)
+            loudness =0;
+        transform.localScale= Vector3.Lerp(minScale,maxScale,loudness);
+    }
+```
+Gets the loudnessFromMicrophone class from a different file and compares it then it scales it relative to the variables
+# class "GetLoudnessFromMicrophone"
+```c#
+    public float GetLoudnessFromMicrophone()
+    {
+        return GetLoudnessFromAudioClip(Microphone.GetPosition(Microphone.devices[0]),microphoneClip);
+    }
+```
+Gets loudness from a clip 
+# class "GetLoudnessFromAudioClip"
+```c#
+    public float GetLoudnessFromAudioClip(int clipPosition, AudioClip clip)
+    {
+        int startPosition = clipPosition- sampleWindow;
+        if(startPosition<0)
+            return 0;
+
+        float[] waveData = new float[sampleWindow];
+        clip.GetData(waveData,startPosition);
+
+        //compute loudness
+        float totalLoudness = 0;
+        for(int i = 0 ; i < sampleWindow; i++)
+        {
+            totalLoudness+= Mathf.Abs(waveData[i]);
+        }
+        return totalLoudness/ sampleWindow;
+    }
+```
+Uses GetData to fetch data from the microphone which is in the form of a wave
+# class "CircularMovement"
+```c#
+    void Update()
+    {
+        if (angle >= 360f)
+            angle = 0f;
+            posX =  centerRotation.position.x + Mathf.Cos (angle) * radiusRotation;
+            posY =  centerRotation.position.y + Mathf.Sin (angle) * radiusRotation;
+            posZ =  centerRotation.position.z + Mathf.Sin (angle) * radiusRotation;
+            angle += Time.deltaTime * angularSpeed;
+        
+
+        transform.position = new Vector3(posX,posY,posZ);
+    }
+```
+Makes the main spaceship rotate in a circular way
+# class "ParticleAI"
+```c#
+    void Update()
+    {
+        otherParticleMesh.SetDestination(particleObj.position);
+    }
+```
+Helps with Artificial intelligence of agents to follow the object
+# class "Randomrotate"
+```c#
+    void Update()
+    {
+        rotateS = speed * Time.deltaTime;
+        transform.Rotate(0, rotateS, 0);
+    }
+}
+```
+Rototate the hologram platforms
 This is a bulleted list
 
 - Item
