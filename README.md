@@ -139,55 +139,32 @@ Helps with Artificial intelligence of agents to follow the object
         rotateS = speed * Time.deltaTime;
         transform.Rotate(0, rotateS, 0);
     }
-}
 ```
 Rototate the hologram platforms
-This is a bulleted list
 
-- Item
-- Item
 
-This is a numbered list
+# Most Proud of 
+I am the most proud of managing the system of walking as well as implementing audio design to my application which greatly enchances the quality of the game.
 
-1. Item
-1. Item
+# Instructions
+In  XR interaction too have the script of interaction manager
+Main vr camera should have audio listener
+locomotion systemshould have conitnues move provider and turn provider
+Robot kyle rig root should have a rig builder connected to upper body and lower body
+Alongside two bone IK contraint in the hands and legs and a multi-parent in the head
+Mirror has audio source with the song of choice
+In different spaceships have a nav mesh agent in the spaceship (1)
+Circular movement in spaceship
+Holograms rotating 
+Guitar with audio loudnesstester
 
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-So is this without specifying the language:
-
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-This is an image using a relative URL:
-
-![An image](images/p8.png)
+# Installed packages
+Animation rigging 
+physics 
+probuilder
+Artificial intelligence
+XR interaction toolkit
+Xr plugin management
 
 This is an image using an absolute URL:
 
@@ -196,13 +173,3 @@ This is an image using an absolute URL:
 This is a youtube video:
 
 [![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-
